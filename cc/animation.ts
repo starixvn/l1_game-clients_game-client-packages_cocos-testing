@@ -1,1 +1,3 @@
-export class Animation {}
+export class Animation {
+    play = jest.fn();
+}

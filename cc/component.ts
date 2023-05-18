@@ -1,5 +1,3 @@
 import { Node } from "./node";
 
-export class Component {
-    node: any = new Node();
-}
+export class Component extends Node {}

@@ -1,1 +1,3 @@
-export class UIOpacity {}
+export class UIOpacity {
+    opacity: number = 0;
+}
