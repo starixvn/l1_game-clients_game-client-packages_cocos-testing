@@ -1,3 +1,4 @@
+export * from "./animation";
 export * from "./asset";
 export * from "./color";
 export * from "./component";
@@ -8,5 +9,7 @@ export * from "./node";
 export * from "./progress-bar";
 export * from "./sprite";
 export * from "./tween";
+export * from "./ui-opacity";
 export * from "./ui-renderer";
+export * from "./v2";
 export * from "./v3";
