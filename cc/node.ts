@@ -11,11 +11,7 @@ export class Node {
 
     active = true;
 
-    get scale(): Vec3 {
-        return new Vec3();
-    }
-
-    set scale(value: any) {}
+    scale: Vec3 = new Vec3();
 
     activeInHierarchy = false;
 
