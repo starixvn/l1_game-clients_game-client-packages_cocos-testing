@@ -9,9 +9,9 @@ export class Node {
 
     position: Vec3 = new Vec3();
 
-    active = true;
+    active: boolean;
 
-    scale: Vec3 = new Vec3();
+    scale: Vec3;
 
     activeInHierarchy = false;
 
