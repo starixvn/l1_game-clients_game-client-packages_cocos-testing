@@ -4,8 +4,7 @@ export const render = jest.fn().mockImplementation((ctor, callback) => () => {
     callback(instance);
 });
 
-export const handle = jest.fn().mockImplementation(() => () => {});
-
+export const handle = (constructor, caller?) => jest.fn((constructor, caller, param) => {});
 export const observer = jest.fn().mockImplementation(() => () => {});
 
 export const configure = jest.fn();
