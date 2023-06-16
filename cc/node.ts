@@ -1,10 +1,15 @@
+import hacks from "./hacks";
 import { Vec3 } from "./v3";
 
 export interface AnyConstructor<T = any> {
     new (...params: any[]): T;
 }
 
+export type Constructor<T> = AnyConstructor<T>;
+
 export class Node {
+    constructor(...args: any[]) {}
+
     name = "node";
 
     position: Vec3 = new Vec3();
@@ -25,21 +30,25 @@ export class Node {
 
     children?: Node[] = [];
 
-    getComponent: <T>(ctor: AnyConstructor<T>) => T = jest.fn();
+    getComponent: <T>(ctor: AnyConstructor<T>) => T = jest.fn().mockReturnValue(hacks);
 
-    addChild: (node: Node) => void = jest.fn();
+    getComponentInChildren: <T>(ctor: AnyConstructor<T>) => T = jest.fn().mockReturnValue(hacks);
 
-    destroyAllChildren = jest.fn();
+    addChild: (node: Node) => void = jest.fn().mockReturnValue(hacks);
 
-    getChildByName = jest.fn();
+    destroyAllChildren = jest.fn().mockReturnValue(hacks);
 
-    setSiblingIndex = jest.fn();
+    getChildByName = jest.fn().mockReturnValue(hacks);
 
-    destroy = jest.fn();
+    setSiblingIndex = jest.fn().mockReturnValue(hacks);
 
-    removeAllChildren = jest.fn();
+    destroy = jest.fn().mockReturnValue(hacks);
 
-    on = jest.fn();
+    removeAllChildren = jest.fn().mockReturnValue(hacks);
 
-    addComponent = jest.fn();
+    on = jest.fn().mockReturnValue(hacks);
+
+    addComponent = jest.fn().mockReturnValue(hacks);
+
+    insertChild = jest.fn().mockReturnValue(hacks);
 }

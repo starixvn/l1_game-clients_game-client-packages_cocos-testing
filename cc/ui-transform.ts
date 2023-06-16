@@ -8,4 +8,6 @@ export class UITransform {
     getBoundingBox = jest.fn();
 
     convertToWorldSpaceAR = jest.fn();
+
+    setContentSize = jest.fn();
 }

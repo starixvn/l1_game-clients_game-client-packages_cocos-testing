@@ -2,24 +2,19 @@ const property = jest.fn();
 const normalized = jest.fn();
 
 export const _decorator = {
-    ccclass: (constructor?) => jest.fn(),
-    property: (target?, propertyKey?, descriptor?) => {
-        if (target === undefined) {
-            // @property() => LegacyPropertyDecorator
-            return property({
-                type: undefined,
-            });
-        } else if (typeof propertyKey === "undefined") {
-            // @property(options) => LegacyPropertyDescriptor
-            // @property(type) => LegacyPropertyDescriptor
-            return normalized;
-        } else {
-            // @property
-            normalized(target, propertyKey, descriptor);
-            return undefined;
+    ccclass: (target?: any) => {
+        if (typeof target === "string") {
+            return (x: unknown) => x;
+        }
+
+        return target;
+    },
+    property: function (...args: any[]): any {
+        if (arguments.length !== 3) {
+            return jest.fn() as any;
         }
     },
-    requireComponent: () => jest.fn(),
+    requireComponent: jest.fn(),
     executeInEditMode: () => jest.fn(),
     menu: () => jest.fn(),
     disallowMultiple: () => jest.fn(),
