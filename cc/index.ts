@@ -11,6 +11,7 @@ export * from "./decorator";
 export * from "./director";
 export * from "./enum";
 export * from "./event-touch";
+export * from "./find";
 export * from "./game";
 export * from "./instantiate";
 export * from "./intersection-2d";
