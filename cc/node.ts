@@ -16,7 +16,7 @@ export class Node {
 
     active: boolean;
 
-    scale: Vec3;
+    scale: any = 0;
 
     activeInHierarchy = false;
 
