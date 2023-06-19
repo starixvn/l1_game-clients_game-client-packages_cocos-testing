@@ -32,6 +32,10 @@ export class Node {
 
     getComponent: <T>(ctor: AnyConstructor<T>) => T = jest.fn().mockReturnValue(hacks);
 
+    getComponents: <T>(ctor: AnyConstructor<T>) => T[] = jest.fn().mockReturnValue([hacks]);
+
+    getComponentsInChildren: <T>(ctor: AnyConstructor<T>) => T[] = jest.fn().mockReturnValue([hacks]);
+
     getComponentInChildren: <T>(ctor: AnyConstructor<T>) => T = jest.fn().mockReturnValue(hacks);
 
     addChild: (node: Node) => void = jest.fn().mockReturnValue(hacks);
@@ -51,4 +55,6 @@ export class Node {
     addComponent = jest.fn().mockReturnValue(hacks);
 
     insertChild = jest.fn().mockReturnValue(hacks);
+
+    schedule = jest.fn().mockReturnValue(hacks);
 }
