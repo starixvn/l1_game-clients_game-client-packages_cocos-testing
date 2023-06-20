@@ -8,4 +8,6 @@ export class Label {
     getComponent = jest.fn();
 
     color = new Color();
+
+    fontSize = 0;
 }

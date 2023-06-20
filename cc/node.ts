@@ -26,7 +26,7 @@ export class Node {
 
     rotation? = {};
 
-    parent?: Node;
+    parent?: Node = this;
 
     children?: Node[] = [];
 

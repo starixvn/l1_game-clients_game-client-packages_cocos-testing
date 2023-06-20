@@ -1,5 +1,9 @@
+import { ModuleMocker } from "jest-mock";
+
 export const render = jest.fn().mockImplementation((ctor, callback) => () => {
-    const instance = new ctor();
+    const mocker = new ModuleMocker(global);
+    const Mock = mocker.generateFromMetadata(mocker.getMetadata(ctor));
+    const instance = new Mock();
 
     callback(instance);
 });
