@@ -16,7 +16,7 @@ export class Node {
 
     active: boolean;
 
-    scale: any = 0;
+    scale: any;
 
     activeInHierarchy = false;
 
