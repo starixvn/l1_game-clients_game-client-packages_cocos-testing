@@ -25,6 +25,7 @@ export * from "./prefab";
 export * from "./progress-bar";
 export * from "./scroll-view";
 export * from "./size";
+export * from "./sp";
 export * from "./sprite";
 export * from "./tween";
 export * from "./ui-opacity";

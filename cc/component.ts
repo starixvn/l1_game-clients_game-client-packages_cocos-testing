@@ -6,4 +6,5 @@ export class Component extends Node {
 
         this.node = new Node();
     }
+    getComponent = jest.fn();
 }
