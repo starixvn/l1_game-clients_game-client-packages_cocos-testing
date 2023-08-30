@@ -1,4 +1,5 @@
 import { Color } from "./color";
+import { Node } from "./node";
 
 export class Label {
     static CacheMode = {

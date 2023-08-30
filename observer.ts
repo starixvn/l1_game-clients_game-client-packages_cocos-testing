@@ -9,7 +9,9 @@ export const render = jest.fn().mockImplementation((ctor, callback) => () => {
 });
 
 export const handle = (constructor, caller?) => jest.fn((constructor, caller, param) => {});
-export const observer = jest.fn().mockImplementation(() => () => {});
+export const observer = (arg?: string) => {
+    return arg || jest.fn();
+};
 
 export const configure = jest.fn();
 

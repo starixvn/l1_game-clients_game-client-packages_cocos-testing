@@ -57,4 +57,6 @@ export class Node {
     insertChild = jest.fn().mockReturnValue(hacks);
 
     schedule = jest.fn().mockReturnValue(hacks);
+
+    off = jest.fn().mockReturnValue(hacks);
 }
