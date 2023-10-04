@@ -1,3 +1,3 @@
 export class UIOpacity {
-    opacity: number = 0;
+    opacity = 255;
 }

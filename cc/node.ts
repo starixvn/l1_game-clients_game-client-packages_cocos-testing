@@ -26,11 +26,22 @@ export class Node {
 
     rotation? = {};
 
-    parent?: Node = this;
+    parent: Node = null;
 
     children?: Node[] = [];
 
-    getComponent: <T>(ctor: AnyConstructor<T>) => T = jest.fn().mockReturnValue(hacks);
+    components = [];
+
+    getComponent<T>(ctor: AnyConstructor<T>) {
+        const comp = this.components.find((component) => component.constructor.name === ctor.prototype.constructor.name);
+        if (comp) {
+            return comp;
+        } else {
+            const newComp = new ctor();
+            this.components.push(newComp);
+            return newComp;
+        }
+    }
 
     getComponents: <T>(ctor: AnyConstructor<T>) => T[] = jest.fn().mockReturnValue([hacks]);
 
