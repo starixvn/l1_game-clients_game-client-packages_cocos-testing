@@ -38,6 +38,7 @@ export class Node {
             return comp;
         } else {
             const newComp = new ctor();
+            newComp["node"] = this;
             this.components.push(newComp);
             return newComp;
         }
