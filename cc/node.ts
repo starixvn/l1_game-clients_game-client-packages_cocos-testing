@@ -8,6 +8,10 @@ export interface AnyConstructor<T = any> {
 export type Constructor<T> = AnyConstructor<T>;
 
 export class Node {
+    static EventType = {
+        TRANSFORM_CHANGED: "TRANSFORM_CHANGED",
+    };
+
     constructor(...args: any[]) {}
 
     name = "node";
@@ -20,6 +24,8 @@ export class Node {
 
     activeInHierarchy = false;
 
+    isValid = true;
+
     enabled = false;
 
     node?: Node;
@@ -29,6 +35,8 @@ export class Node {
     parent: Node = null;
 
     children?: Node[] = [];
+
+    angle: number;
 
     components = [];
 
