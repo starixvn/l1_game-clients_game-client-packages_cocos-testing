@@ -4,6 +4,8 @@ export class Game {
 
     on = jest.fn();
     off = jest.fn();
+
+    canvas: HTMLCanvasElement = null;
 }
 
 export const game = new Game();
