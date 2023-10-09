@@ -46,3 +46,4 @@ export * from "./ui-transform";
 export * from "./v2";
 export * from "./v3";
 export * from "./widget";
+export * from "./rich-text";

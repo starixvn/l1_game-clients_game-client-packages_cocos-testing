@@ -11,7 +11,7 @@ export class Component {
 
     onEnable() {}
 
-    onDestroy() {}
+    protected onDestroy() {}
 
     onDisable() {}
 }
