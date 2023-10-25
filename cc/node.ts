@@ -1,4 +1,5 @@
 import hacks from "./hacks";
+import { Layers } from "./players";
 import { Vec3 } from "./v3";
 
 export interface AnyConstructor<T = any> {
@@ -79,4 +80,6 @@ export class Node {
     schedule = jest.fn().mockReturnValue(hacks);
 
     off = jest.fn().mockReturnValue(hacks);
+
+    layer = Layers.Enum.UI_2D;
 }

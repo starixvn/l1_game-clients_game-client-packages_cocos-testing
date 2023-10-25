@@ -28,6 +28,7 @@ export * from "./layout";
 export * from "./mask";
 export * as math from "./math";
 export * from "./node";
+export * from "./players";
 export * from "./polygon-collider-2d";
 export * from "./prefab";
 export * from "./progress-bar";
