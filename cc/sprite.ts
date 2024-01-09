@@ -16,4 +16,6 @@ export class Sprite {
 
 export class SpriteFrame {}
 
-export class SpriteAtlas {}
+export class SpriteAtlas {
+    getSpriteFrame = jest.fn();
+}
