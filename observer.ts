@@ -13,6 +13,7 @@ export const observer = (arg?: string) => {
     return arg || jest.fn();
 };
 
+export const useObserver =jest.fn();
 export const configure = jest.fn();
 
 export default { render, handle, configure, observer };
