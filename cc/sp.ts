@@ -4,5 +4,6 @@ export namespace sp {
         setAnimation = jest.fn();
         addAnimation = jest.fn();
         findAnimation = jest.fn();
+        setSkin = jest.fn();
     }
 }
