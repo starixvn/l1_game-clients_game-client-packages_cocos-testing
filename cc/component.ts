@@ -7,6 +7,7 @@ export class Component {
     getComponent = jest.fn();
     getComponents = jest.fn();
     getComponentsInChildren = jest.fn();
+    getComponentInChildren = jest.fn();
     destroy = jest.fn();
 
     onEnable() {}
