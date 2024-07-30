@@ -16,6 +16,7 @@ export class Label {
     color = new Color();
 
     fontSize = 0;
+    lineHeight = 0;
 
     cacheMode = 2;
 }
