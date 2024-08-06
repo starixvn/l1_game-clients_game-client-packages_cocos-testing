@@ -8,6 +8,7 @@ export namespace AssetManager {
 
 export const assetManager = {
     loadBundle: jest.fn(),
+    loadRemote: jest.fn(),
 };
 
 export const log = jest.fn();
