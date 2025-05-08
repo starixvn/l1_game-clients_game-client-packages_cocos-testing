@@ -6,7 +6,12 @@ export namespace AssetManager {
     }
 }
 
-export const assetManager = {
+export interface IAssetManager {
+    loadRemote<T extends Asset>(url: string, onComplete?: ((err: Error | null, data: T) => void) | null): void;
+    loadBundle(nameOrUrl: string, onComplete?: ((err: Error | null, data: AssetManager.Bundle) => void) | null): void;
+}
+
+export const assetManager: IAssetManager = {
     loadBundle: jest
         .fn()
         .mockImplementation((nameOrUrl: string, onComplete?: ((err: Error | null, data: AssetManager.Bundle) => void) | null): void => {
@@ -14,9 +19,9 @@ export const assetManager = {
                 onComplete(null, new AssetManager.Bundle());
             }
         }),
-    loadRemote: jest.fn().mockImplementation((url: string, onComplete?: ((err: Error | null, data: Asset) => void) | null): void => {
+    loadRemote: jest.fn().mockImplementation(<T extends Asset>(url: string, onComplete?: ((err: Error | null, data: T) => void) | null): void => {
         if (onComplete) {
-            onComplete(null, {} as Asset);
+            onComplete(null, {} as T);
         }
     }),
 };
