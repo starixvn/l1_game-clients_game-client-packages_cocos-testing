@@ -6,6 +6,9 @@ export class Tween<T = any> {
 }
 
 export const tweenInstance = {
+    sequence: jest.fn().mockReturnThis(),
+    call: jest.fn().mockReturnThis(),
+    delay: jest.fn().mockReturnThis(),
     to: jest.fn().mockReturnThis(),
     by: jest.fn().mockReturnThis(),
     start: jest.fn().mockReturnThis(),
