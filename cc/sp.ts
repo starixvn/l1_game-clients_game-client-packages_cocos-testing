@@ -37,6 +37,9 @@ export namespace sp {
         setSkin = jest.fn();
         getCurrent = jest.fn();
         getState = jest.fn().mockReturnValue(new AnimationState());
-        node: Node;
+        get node() {
+            return this._node;
+        }
+        private _node = new Node();
     }
 }
