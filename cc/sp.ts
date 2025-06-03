@@ -33,6 +33,7 @@ export namespace sp {
         timeScale: number;
         setAnimation = jest.fn();
         addAnimation = jest.fn();
+        clearAnimation = jest.fn();
         findAnimation = jest.fn();
         setSkin = jest.fn();
         getCurrent = jest.fn();
