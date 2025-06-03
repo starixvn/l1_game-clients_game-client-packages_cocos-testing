@@ -8,80 +8,6 @@ export interface AnyConstructor<T = any> {
 
 export type Constructor<T> = AnyConstructor<T>;
 
-export class Node {
-    constructor(...args: any[]) {}
-
-    name = "node";
-
-    position: Vec3 = new Vec3();
-
-    active: boolean;
-
-    scale: any;
-
-    activeInHierarchy = false;
-
-    isValid = true;
-
-    enabled = false;
-
-    node?: Node;
-
-    rotation? = {};
-
-    parent: Node = null;
-
-    children?: Node[] = [];
-
-    angle: number;
-
-    components = [];
-
-    getComponent<T>(ctor: AnyConstructor<T>) {
-        const comp = this.components.find((component) => component.constructor.name === ctor.prototype.constructor.name);
-        if (comp) {
-            return comp;
-        } else {
-            const newComp = new ctor();
-            newComp["node"] = this;
-            this.components.push(newComp);
-            return newComp;
-        }
-    }
-
-    getComponents: <T>(ctor: AnyConstructor<T>) => T[] = jest.fn().mockReturnValue([hacks]);
-
-    getComponentsInChildren: <T>(ctor: AnyConstructor<T>) => T[] = jest.fn().mockReturnValue([hacks]);
-
-    getComponentInChildren: <T>(ctor: AnyConstructor<T>) => T = jest.fn().mockReturnValue(hacks);
-
-    addChild: (node: Node) => void = jest.fn().mockReturnValue(hacks);
-
-    destroyAllChildren = jest.fn().mockReturnValue(hacks);
-
-    getChildByName = jest.fn().mockReturnValue(hacks);
-
-    setSiblingIndex = jest.fn().mockReturnValue(hacks);
-
-    destroy = jest.fn().mockReturnValue(hacks);
-
-    removeAllChildren = jest.fn().mockReturnValue(hacks);
-
-    on = jest.fn().mockReturnValue(hacks);
-
-    addComponent = jest.fn().mockReturnValue(hacks);
-
-    insertChild = jest.fn().mockReturnValue(hacks);
-
-    schedule = jest.fn().mockReturnValue(hacks);
-
-    off = jest.fn().mockReturnValue(hacks);
-
-    layer = Layers.Enum.UI_2D;
-    
-    static EventType: typeof NodeEventType;
-}
-
 export enum NodeEventType {
     /**
      * @en
@@ -317,4 +243,78 @@ export enum NodeEventType {
      * 当光照探针烘焙数据修改后触发的事件
      */
     LIGHT_PROBE_BAKING_CHANGED = "light-probe-baking-changed",
+}
+
+export class Node {
+    constructor(...args: any[]) {}
+
+    name = "node";
+
+    position: Vec3 = new Vec3();
+
+    active: boolean;
+
+    scale: any;
+
+    activeInHierarchy = false;
+
+    isValid = true;
+
+    enabled = false;
+
+    node?: Node;
+
+    rotation? = {};
+
+    parent: Node = null;
+
+    children?: Node[] = [];
+
+    angle: number;
+
+    components = [];
+
+    getComponent<T>(ctor: AnyConstructor<T>) {
+        const comp = this.components.find((component) => component.constructor.name === ctor.prototype.constructor.name);
+        if (comp) {
+            return comp;
+        } else {
+            const newComp = new ctor();
+            newComp["node"] = this;
+            this.components.push(newComp);
+            return newComp;
+        }
+    }
+
+    getComponents: <T>(ctor: AnyConstructor<T>) => T[] = jest.fn().mockReturnValue([hacks]);
+
+    getComponentsInChildren: <T>(ctor: AnyConstructor<T>) => T[] = jest.fn().mockReturnValue([hacks]);
+
+    getComponentInChildren: <T>(ctor: AnyConstructor<T>) => T = jest.fn().mockReturnValue(hacks);
+
+    addChild: (node: Node) => void = jest.fn().mockReturnValue(hacks);
+
+    destroyAllChildren = jest.fn().mockReturnValue(hacks);
+
+    getChildByName = jest.fn().mockReturnValue(hacks);
+
+    setSiblingIndex = jest.fn().mockReturnValue(hacks);
+
+    destroy = jest.fn().mockReturnValue(hacks);
+
+    removeAllChildren = jest.fn().mockReturnValue(hacks);
+
+    on = jest.fn().mockReturnValue(hacks);
+
+    addComponent = jest.fn().mockReturnValue(hacks);
+
+    insertChild = jest.fn().mockReturnValue(hacks);
+
+    schedule = jest.fn().mockReturnValue(hacks);
+
+    off = jest.fn().mockReturnValue(hacks);
+
+    layer = Layers.Enum.UI_2D;
+
+    static EventType = NodeEventType;
 }
