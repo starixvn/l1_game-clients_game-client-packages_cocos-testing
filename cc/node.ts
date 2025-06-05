@@ -294,6 +294,8 @@ export class Node {
 
     addChild: (node: Node) => void = jest.fn().mockReturnValue(hacks);
 
+    emit: (type: string, arg0?: any, arg1?: any, arg2?: any, arg3?: any, arg4?: any) => void = jest.fn().mockReturnValue(hacks);
+
     destroyAllChildren = jest.fn().mockReturnValue(hacks);
 
     getChildByName = jest.fn().mockReturnValue(hacks);
