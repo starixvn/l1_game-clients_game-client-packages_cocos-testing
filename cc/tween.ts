@@ -14,6 +14,7 @@ export const tweenInstance = {
     start: jest.fn().mockReturnThis(),
     stop: jest.fn().mockReturnThis(),
     repeatForever: jest.fn().mockReturnThis(),
+    destroySelf: jest.fn().mockReturnThis(),
 };
 
 export const tween = jest.fn().mockReturnValue(tweenInstance);

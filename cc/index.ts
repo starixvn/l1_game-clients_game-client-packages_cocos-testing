@@ -19,6 +19,7 @@ export * from "./event";
 export * from "./event-keyboard";
 export * from "./event-touch";
 export * from "./find";
+export * from "./font";
 export * from "./game";
 export * from "./input";
 export * from "./instantiate";

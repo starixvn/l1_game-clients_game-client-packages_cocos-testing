@@ -1,3 +1,5 @@
+import { Node } from "./node";
+
 export class UITransform {
     width = 0;
 
@@ -12,4 +14,5 @@ export class UITransform {
     setContentSize = jest.fn();
 
     hitTest = jest.fn();
+    node = new Node();
 }

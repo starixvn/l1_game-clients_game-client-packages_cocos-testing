@@ -250,7 +250,14 @@ export class Node {
 
     name = "node";
 
-    position: Vec3 = new Vec3();
+    private _position: Vec3 = new Vec3();
+
+    get position(): Vec3 {
+        return this._position;
+    }
+    set position(value: Vec3) {
+        this._position = value;
+    }
 
     active: boolean;
 
@@ -292,7 +299,14 @@ export class Node {
 
     getComponentInChildren: <T>(ctor: AnyConstructor<T>) => T = jest.fn().mockReturnValue(hacks);
 
-    addChild: (node: Node) => void = jest.fn().mockReturnValue(hacks);
+    addChild: (node: Node) => void = function (this: Node, node: Node) {
+        if (!this.children) {
+            this.children = [];
+        }
+        this.children.push(node);
+        node.parent = this;
+        return node;
+    };
 
     emit: (type: string, arg0?: any, arg1?: any, arg2?: any, arg3?: any, arg4?: any) => void = jest.fn().mockReturnValue(hacks);
 
@@ -308,7 +322,12 @@ export class Node {
 
     on = jest.fn().mockReturnValue(hacks);
 
-    addComponent = jest.fn().mockReturnValue(hacks);
+    addComponent = function <T>(ctor: AnyConstructor<T>): T {
+        const comp = new ctor();
+        comp["node"] = this;
+        this.components.push(comp);
+        return comp;
+    };
 
     insertChild = jest.fn().mockReturnValue(hacks);
 
