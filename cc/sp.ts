@@ -42,5 +42,6 @@ export namespace sp {
             return this._node;
         }
         private _node = new Node();
+        setMix = jest.fn();
     }
 }
