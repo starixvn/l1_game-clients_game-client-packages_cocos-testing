@@ -13,6 +13,7 @@ type Sys = {
     isBrowser: boolean;
     os: OS[keyof OS];
     OS: OS;
+    isMobile: boolean;
 };
 
 export const sys: Sys = {
@@ -34,5 +35,8 @@ export const sys: Sys = {
         OHOS: "OHOS",
 
         OPENHARMONY: "OpenHarmony",
+    },
+    get isMobile() {
+        return this.os === this.OS.IOS || this.os === this.OS.ANDROID;
     },
 };
