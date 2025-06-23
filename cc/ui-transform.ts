@@ -10,4 +10,6 @@ export class UITransform {
     convertToWorldSpaceAR = jest.fn();
 
     setContentSize = jest.fn();
+
+    hitTest = jest.fn();
 }
