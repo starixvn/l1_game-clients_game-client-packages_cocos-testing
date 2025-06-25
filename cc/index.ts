@@ -27,6 +27,7 @@ export * from "./json-asset";
 export * from "./key-code";
 export * from "./label";
 export * from "./layout";
+export * from "./macro";
 export * from "./mask";
 export * as math from "./math";
 export * from "./node";
