@@ -44,4 +44,6 @@ export namespace sp {
         private _node = new Node();
         setMix = jest.fn();
     }
+
+    export class SkeletonData {}
 }
