@@ -335,6 +335,17 @@ export class Node {
 
     off = jest.fn().mockReturnValue(hacks);
 
+    removeFromParent = jest.fn().mockImplementation(function (this: Node) {
+        if (this.parent && this.parent.children) {
+            const index = this.parent.children.indexOf(this);
+            if (index !== -1) {
+                this.parent.children.splice(index, 1);
+            }
+            this.parent = null;
+        }
+        return this;
+    });
+
     layer = Layers.Enum.UI_2D;
 
     static EventType = NodeEventType;

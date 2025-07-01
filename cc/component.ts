@@ -10,7 +10,7 @@ export class Component {
     getComponentInChildren = jest.fn();
     destroy = jest.fn();
 
-    onEnable() {}
+    protected onEnable() {}
 
     protected onDestroy() {}
 

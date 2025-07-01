@@ -1,4 +1,10 @@
-export const v3 = jest.fn();
+export const v3 = jest.fn((x = 0, y = 0, z = 0) => {
+    return {
+        x, y, z,
+        clone: jest.fn().mockReturnValue({ x, y, z, clone: jest.fn() }),
+        add: jest.fn().mockImplementation((other) => v3(x + other.x, y + other.y, z + other.z)),
+    };
+});
 
 export class Vec3 {
     static ZERO = 0;
