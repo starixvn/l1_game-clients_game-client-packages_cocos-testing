@@ -8,6 +8,7 @@ export class Game {
     canvas: HTMLCanvasElement = {
         addEventListener: jest.fn(),
         removeEventListener: jest.fn(),
+        focus: jest.fn(),
     } as any;
 }
 
