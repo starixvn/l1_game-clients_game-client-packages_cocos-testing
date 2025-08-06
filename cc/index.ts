@@ -17,6 +17,7 @@ export * from "./edit-box";
 export * from "./enum";
 export * from "./event";
 export * from "./event-keyboard";
+export * from "./event-target";
 export * from "./event-touch";
 export * from "./find";
 export * from "./font";
