@@ -5,6 +5,7 @@ export class Component {
     node = new Node();
     enabled = true;
     getComponent = jest.fn();
+    addComponent = jest.fn();
     getComponents = jest.fn();
     getComponentsInChildren = jest.fn();
     getComponentInChildren = jest.fn();
