@@ -333,6 +333,8 @@ export class Node {
 
     schedule = jest.fn().mockReturnValue(hacks);
 
+    setScale = jest.fn().mockReturnValue(hacks);
+
     off = jest.fn().mockReturnValue(hacks);
 
     layer = Layers.Enum.UI_2D;

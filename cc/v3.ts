@@ -8,5 +8,11 @@ export class Vec3 {
     y? = 0;
     z? = 0;
 
+    constructor(x?: number, y?: number, z?: number) {
+        this.x = x ?? 0;
+        this.y = y ?? 0;
+        this.z = z ?? 0;
+    }
+
     clone = jest.fn();
 }

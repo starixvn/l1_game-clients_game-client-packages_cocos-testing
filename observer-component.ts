@@ -7,5 +7,9 @@ jest.mock("db://shared-components/shared/common-components/observer-component/sc
         start() {}
         update() {}
         node = new Node();
+        schedule = jest.fn();
+        scheduleOnce = jest.fn();
+        unschedule = jest.fn();
+        unscheduleAllCallbacks = jest.fn();
     },
 }));
