@@ -7,4 +7,6 @@ export class Widget {
     top = 0;
     isAlignBottom = true;
     bottom = 0;
+    alignMode = 0;
+    updateAlignment = jest.fn();
 }

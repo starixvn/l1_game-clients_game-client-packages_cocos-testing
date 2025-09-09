@@ -281,6 +281,11 @@ export class Node {
 
     components = [];
 
+    // Add missing properties
+    x: number = 0;
+    y: number = 0;
+    z: number = 0;
+
     getComponent<T>(ctor: AnyConstructor<T>) {
         const comp = this.components.find((component) => component.constructor.name === ctor.prototype.constructor.name);
         if (comp) {
