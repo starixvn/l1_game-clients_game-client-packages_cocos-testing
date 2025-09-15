@@ -1,7 +1,7 @@
 import { Node } from "./node";
 
 export class Component {
-    constructor() {}
+    constructor() { }
     node = new Node();
     enabled = true;
     getComponent = jest.fn();
@@ -11,11 +11,13 @@ export class Component {
     getComponentInChildren = jest.fn();
     destroy = jest.fn();
 
-    onEnable() {}
+    onEnable() { }
 
-    protected onDestroy() {}
+    protected onDestroy() { }
 
-    onDisable() {}
+    onDisable() { }
     schedule = jest.fn();
     scheduleOnce = jest.fn();
+    unschedule = jest.fn();
+    unscheduleAllCallbacks = jest.fn();
 }
