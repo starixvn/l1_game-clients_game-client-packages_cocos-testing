@@ -9,6 +9,7 @@ export * from "./cc-boolean";
 export * from "./cc-float";
 export * from "./cc-integer";
 export * from "./cc-string";
+export * from "./circle-collider-2d";
 export * from "./color";
 export * from "./component";
 export * from "./decorator";
