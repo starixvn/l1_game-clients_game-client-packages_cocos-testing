@@ -22,7 +22,18 @@ export class Sprite {
     }
 }
 
-export class SpriteFrame {}
+export class SpriteFrame {
+    texture: any;
+    
+    constructor() {
+    }
+}
+
+export class ImageAsset {}
+
+export class Texture2D {
+    image: any = null;
+}
 
 export class SpriteAtlas {
     getSpriteFrame = jest.fn();
